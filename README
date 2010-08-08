@@ -1,0 +1,17 @@
+This repository contains simple GNU Radio Companion scripts that I have used for simple DVB setup. It's no DVB-T or DVB-S system (yet), just a simple way to get a webcam on the air.
+
+For video processing I used Gstreamer and connected to GNU Radio using named pipes. See http://wiki.oz9aec.net/index.php/Simple_DVB_with_Gstreamer_and_GNU_Radio for more details.
+
+gmsk_tx.grc and gmsk_rx.grc:
+A simple GMSK transmitter and receiver pair that can be used on separate computers and USRPs.
+
+gmsk_trx.grc:
+A smiple GMSK transceiver that can be used on one computer with one USRP for both transmit and receive.
+
+gmsk_sim.grc:
+A simple TX+RX simulator that can be used to test without any USRP.
+
+gst-cmd.txt:
+Example Gstreamer commands to build the video processing pipelines.
+
+
