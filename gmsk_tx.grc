@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='ASCII'?>
 <flow_graph>
-  <timestamp>Sat Aug  7 16:14:02 2010</timestamp>
+  <timestamp>Fri Aug 20 01:28:26 2010</timestamp>
   <block>
     <key>options</key>
     <param>
@@ -50,115 +50,6 @@
     <param>
       <key>_coordinate</key>
       <value>(25, 31)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>blks2_packet_encoder</key>
-    <param>
-      <key>id</key>
-      <value>blks2_packet_encoder_0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>byte</value>
-    </param>
-    <param>
-      <key>samples_per_symbol</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>bits_per_symbol</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>access_code</key>
-      <value></value>
-    </param>
-    <param>
-      <key>pad_for_usrp</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>payload_length</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(222, 194)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>blks2_gmsk_mod</key>
-    <param>
-      <key>id</key>
-      <value>blks2_gmsk_mod_0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>samples_per_symbol</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>bt</key>
-      <value>0.35</value>
-    </param>
-    <param>
-      <key>verbose</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>log</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(431, 218)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>gr_multiply_const_vxx</key>
-    <param>
-      <key>id</key>
-      <value>gr_multiply_const_vxx_0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>const</key>
-      <value>signal</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(644, 227)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -357,6 +248,84 @@
     </param>
   </block>
   <block>
+    <key>blks2_gmsk_mod</key>
+    <param>
+      <key>id</key>
+      <value>blks2_gmsk_mod_0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>samples_per_symbol</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>bt</key>
+      <value>0.35</value>
+    </param>
+    <param>
+      <key>verbose</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>log</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(431, 216)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>blks2_packet_encoder</key>
+    <param>
+      <key>id</key>
+      <value>blks2_packet_encoder_0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>byte</value>
+    </param>
+    <param>
+      <key>samples_per_symbol</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>bits_per_symbol</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>access_code</key>
+      <value></value>
+    </param>
+    <param>
+      <key>pad_for_usrp</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>payload_length</key>
+      <value>4000</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(222, 194)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
     <key>usrp_simple_sink_x</key>
     <param>
       <key>id</key>
@@ -400,7 +369,38 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(846, 187)</value>
+      <value>(846, 186)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>gr_multiply_const_vxx</key>
+    <param>
+      <key>id</key>
+      <value>gr_multiply_const_vxx_0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>complex</value>
+    </param>
+    <param>
+      <key>const</key>
+      <value>signal</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(644, 224)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -408,8 +408,14 @@
     </param>
   </block>
   <connection>
-    <source_block_id>gr_multiply_const_vxx_0</source_block_id>
-    <sink_block_id>usrp_simple_sink_x_0</sink_block_id>
+    <source_block_id>gr_file_source_0</source_block_id>
+    <sink_block_id>blks2_packet_encoder_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blks2_packet_encoder_0</source_block_id>
+    <sink_block_id>blks2_gmsk_mod_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -420,14 +426,8 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>gr_file_source_0</source_block_id>
-    <sink_block_id>blks2_packet_encoder_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blks2_packet_encoder_0</source_block_id>
-    <sink_block_id>blks2_gmsk_mod_0</sink_block_id>
+    <source_block_id>gr_multiply_const_vxx_0</source_block_id>
+    <sink_block_id>usrp_simple_sink_x_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
