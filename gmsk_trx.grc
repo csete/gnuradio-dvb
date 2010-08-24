@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='ASCII'?>
 <flow_graph>
-  <timestamp>Thu Aug 19 23:38:52 2010</timestamp>
+  <timestamp>Tue Aug 24 11:40:29 2010</timestamp>
   <block>
     <key>options</key>
     <param>
@@ -238,53 +238,6 @@
     <param>
       <key>_coordinate</key>
       <value>(243, 115)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>blks2_gmsk_demod</key>
-    <param>
-      <key>id</key>
-      <value>blks2_gmsk_demod_0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>samples_per_symbol</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>gain_mu</key>
-      <value>0.175</value>
-    </param>
-    <param>
-      <key>mu</key>
-      <value>0.5</value>
-    </param>
-    <param>
-      <key>omega_relative_limit</key>
-      <value>0.005</value>
-    </param>
-    <param>
-      <key>freq_error</key>
-      <value>0.0</value>
-    </param>
-    <param>
-      <key>verbose</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>log</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(455, 131)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -633,72 +586,6 @@
     </param>
   </block>
   <block>
-    <key>gr_file_sink</key>
-    <param>
-      <key>id</key>
-      <value>gr_file_sink_1</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>file</key>
-      <value>video2.ts</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>byte</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>unbuffered</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(912, 153)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>blks2_packet_decoder</key>
-    <param>
-      <key>id</key>
-      <value>blks2_packet_decoder_0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>byte</value>
-    </param>
-    <param>
-      <key>access_code</key>
-      <value></value>
-    </param>
-    <param>
-      <key>threshold</key>
-      <value>-1</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(705, 153)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
     <key>blks2_gmsk_mod</key>
     <param>
       <key>id</key>
@@ -776,6 +663,119 @@
       <value>0</value>
     </param>
   </block>
+  <block>
+    <key>blks2_packet_decoder</key>
+    <param>
+      <key>id</key>
+      <value>blks2_packet_decoder_0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>byte</value>
+    </param>
+    <param>
+      <key>access_code</key>
+      <value></value>
+    </param>
+    <param>
+      <key>threshold</key>
+      <value>-1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(704, 152)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>gr_file_sink</key>
+    <param>
+      <key>id</key>
+      <value>gr_file_sink_1</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>file</key>
+      <value>video2.ts</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>byte</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>unbuffered</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(911, 152)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>blks2_gmsk_demod</key>
+    <param>
+      <key>id</key>
+      <value>blks2_gmsk_demod_0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>samples_per_symbol</key>
+      <value>2</value>
+    </param>
+    <param>
+      <key>gain_mu</key>
+      <value>0.175</value>
+    </param>
+    <param>
+      <key>mu</key>
+      <value>0.5</value>
+    </param>
+    <param>
+      <key>omega_relative_limit</key>
+      <value>0.005</value>
+    </param>
+    <param>
+      <key>freq_error</key>
+      <value>0.0</value>
+    </param>
+    <param>
+      <key>verbose</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>log</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(454, 130)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
   <connection>
     <source_block_id>usrp_simple_source_x_0</source_block_id>
     <sink_block_id>wxgui_fftsink2_0</sink_block_id>
@@ -819,14 +819,14 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blks2_packet_decoder_0</source_block_id>
-    <sink_block_id>gr_file_sink_1</sink_block_id>
+    <source_block_id>blks2_gmsk_demod_0</source_block_id>
+    <sink_block_id>blks2_packet_decoder_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blks2_gmsk_demod_0</source_block_id>
-    <sink_block_id>blks2_packet_decoder_0</sink_block_id>
+    <source_block_id>blks2_packet_decoder_0</source_block_id>
+    <sink_block_id>gr_file_sink_1</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
