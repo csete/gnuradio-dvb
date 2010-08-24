@@ -14,4 +14,6 @@ A simple TX+RX simulator that can be used to test without any USRP.
 gst-cmd.txt:
 Example Gstreamer commands to build the video processing pipelines.
 
+multicam.py:
+An experimental GUI to switch between different cameras (not very functional yet).
 
