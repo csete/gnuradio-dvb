@@ -25,7 +25,7 @@ gst-launch -v playbin uri=file:///path/to/video2.ts
 Unfortunately this does not work with the current setup. I suspect it is due to the mixed CBR/VBR in the setup.
 
 
-We could also add a local monitor on the TX side; however, this doesn't work either (also due to VBR/CBR mess):
+We could also add a local monitor on the TX side; however, this doesn't work on Ubuntu 10.04 but does work on 9.10 (suspecting either x264enc or libx264 regression):
 gst-launch -e -v videotestsrc ! video/x-raw-yuv, framerate=25/1, width=640, height=360 ! timeoverlay halign=left valign=bottom shaded-background=true ! textoverlay text="Test Video 640x360 25fps" halign=center valign=top shaded-background=true tee name="splitter" ! queue ! xvimagesink sync=false splitter. ! queue ! x264enc bitrate=498 ! mpegtsmux ! filesink location=video1.ts
 
 
