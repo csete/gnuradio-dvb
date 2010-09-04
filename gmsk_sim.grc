@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='ASCII'?>
 <flow_graph>
-  <timestamp>Sun Aug  8 01:14:35 2010</timestamp>
+  <timestamp>Sat Sep  4 23:52:26 2010</timestamp>
   <block>
     <key>options</key>
     <param>
@@ -155,41 +155,6 @@
     <param>
       <key>_coordinate</key>
       <value>(60, 480)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>gr_file_sink</key>
-    <param>
-      <key>id</key>
-      <value>gr_file_sink_1</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>file</key>
-      <value>video2.ts</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>byte</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>unbuffered</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(907, 471)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -606,6 +571,41 @@
     </param>
   </block>
   <block>
+    <key>gr_file_source</key>
+    <param>
+      <key>id</key>
+      <value>gr_file_source_0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>file</key>
+      <value>txfifo.ts</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>byte</value>
+    </param>
+    <param>
+      <key>repeat</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(164, 112)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
     <key>blks2_packet_encoder</key>
     <param>
       <key>id</key>
@@ -633,15 +633,15 @@
     </param>
     <param>
       <key>pad_for_usrp</key>
-      <value>True</value>
+      <value>False</value>
     </param>
     <param>
       <key>payload_length</key>
-      <value>0</value>
+      <value>4000</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(402, 237)</value>
+      <value>(400, 235)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -649,10 +649,10 @@
     </param>
   </block>
   <block>
-    <key>gr_file_source</key>
+    <key>gr_file_sink</key>
     <param>
       <key>id</key>
-      <value>gr_file_source_0</value>
+      <value>gr_file_sink_1</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -660,23 +660,23 @@
     </param>
     <param>
       <key>file</key>
-      <value>video1.ts</value>
+      <value>rxfifo.ts</value>
     </param>
     <param>
       <key>type</key>
       <value>byte</value>
     </param>
     <param>
-      <key>repeat</key>
-      <value>False</value>
-    </param>
-    <param>
       <key>vlen</key>
       <value>1</value>
     </param>
     <param>
+      <key>unbuffered</key>
+      <value>False</value>
+    </param>
+    <param>
       <key>_coordinate</key>
-      <value>(164, 112)</value>
+      <value>(907, 471)</value>
     </param>
     <param>
       <key>_rotation</key>

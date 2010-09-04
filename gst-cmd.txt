@@ -1,32 +1,32 @@
 Gstreamer commands to use with the simple DVB TX/RX. For more tips and tricks see http://wiki.oz9aec.net/index.php/Gstreamer_Cheat_Sheet
 
 Notes:
-- video1.ts and video2.ts are named pipes created using the "mkfifo" command.
+- txfifo.ts and rxfifo.ts are named pipes created using the "mkfifo" command.
 - The packet encoder adds 12 bytes / packet overhead. Therefore, when USRP rate is set to
   1 Msps, GMSK modulator to 2 samples / symbol and the packet encoder payload size is set to 4000,
-  the packet encoder overhead will be 1.5 kbps, leaving 498.5 kbps for the video. Hogher and lower
-  rates wil lwork too, tough.
+  the packet encoder overhead will be 1.5 kbps, leaving 498.5 kbps for the video. Higher and lower
+  rates will work too, tough.
   
 
 1. Launch a video test source encoded to H.264/MPEG-TS and send it to a named pipe called video1.ts:
-gst-launch -e videotestsrc ! video/x-raw-yuv, framerate=25/1, width=640, height=360 ! x264enc bitrate=498 ! mpegtsmux ! filesink location=video1.ts
+gst-launch -e videotestsrc ! video/x-raw-yuv, framerate=25/1, width=640, height=360 ! x264enc bitrate=498 ! mpegtsmux ! filesink location=txfifo.ts
 
 2. Same as above but adds some nice text overlay:
-gst-launch -e videotestsrc ! video/x-raw-yuv, framerate=25/1, width=640, height=360 ! timeoverlay halign=left valign=bottom shaded-background=true ! textoverlay text="Test Video 640x360 25fps" halign=center valign=top shaded-background=true ! x264enc bitrate=498 ! mpegtsmux ! filesink location=video1.ts
+gst-launch -e videotestsrc ! video/x-raw-yuv, framerate=25/1, width=640, height=360 ! timeoverlay halign=left valign=bottom shaded-background=true ! textoverlay text="Test Video 640x360 25fps" halign=center valign=top shaded-background=true ! x264enc bitrate=498 ! mpegtsmux ! filesink location=txfifo.ts
 
 3. Same as above but uses webcam instead of videotestsrc:
-gst-launch -e -v v4l2src device="/dev/video1" ! video/x-raw-yuv, framerate=25/1, width=640, height=360 ! timeoverlay halign=right valign=bottom shaded-background=true ! textoverlay text="Test Video 640x360 25fps" halign=left valign=bottom shaded-background=true ! x264enc bitrate=498 ! mpegtsmux ! filesink location=video1.ts
+gst-launch -e -v v4l2src device="/dev/video1" ! video/x-raw-yuv, framerate=25/1, width=640, height=360 ! timeoverlay halign=right valign=bottom shaded-background=true ! textoverlay text="Test Video 640x360 25fps" halign=left valign=bottom shaded-background=true ! x264enc bitrate=498 ! mpegtsmux ! filesink location=txfifo.ts
 
 On the receiver side you can simply run mplayer:
-mplayer video2.ts
+mplayer rxfifo.ts
 
 A Gstreamer based player would look something like this:
-gst-launch -v playbin uri=file:///path/to/video2.ts
+gst-launch -v playbin uri=file:///path/to/rxfifo.ts
 Unfortunately this does not work with the current setup. I suspect it is due to the mixed CBR/VBR in the setup.
 
 
 We could also add a local monitor on the TX side; however, this doesn't work on Ubuntu 10.04 but does work on 9.10 (suspecting either x264enc or libx264 regression):
-gst-launch -e -v videotestsrc ! video/x-raw-yuv, framerate=25/1, width=640, height=360 ! timeoverlay halign=left valign=bottom shaded-background=true ! textoverlay text="Test Video 640x360 25fps" halign=center valign=top shaded-background=true tee name="splitter" ! queue ! xvimagesink sync=false splitter. ! queue ! x264enc bitrate=498 ! mpegtsmux ! filesink location=video1.ts
+gst-launch -e -v videotestsrc ! video/x-raw-yuv, framerate=25/1, width=640, height=360 ! timeoverlay halign=left valign=bottom shaded-background=true ! textoverlay text="Test Video 640x360 25fps" halign=center valign=top shaded-background=true tee name="splitter" ! queue ! xvimagesink sync=false splitter. ! queue ! x264enc bitrate=498 ! mpegtsmux ! filesink location=txfifo.ts
 
 
 Alex
