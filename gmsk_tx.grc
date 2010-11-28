@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='ASCII'?>
 <flow_graph>
-  <timestamp>Sat Sep  4 23:50:59 2010</timestamp>
+  <timestamp>Sun Nov 28 22:40:38 2010</timestamp>
   <block>
     <key>options</key>
     <param>
@@ -50,61 +50,6 @@
     <param>
       <key>_coordinate</key>
       <value>(25, 31)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>variable_slider</key>
-    <param>
-      <key>id</key>
-      <value>signal</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>label</key>
-      <value>Signal</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>5000</value>
-    </param>
-    <param>
-      <key>min</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>max</key>
-      <value>32000</value>
-    </param>
-    <param>
-      <key>num_steps</key>
-      <value>320</value>
-    </param>
-    <param>
-      <key>style</key>
-      <value>wx.SL_HORIZONTAL</value>
-    </param>
-    <param>
-      <key>converver</key>
-      <value>float_converter</value>
-    </param>
-    <param>
-      <key>grid_pos</key>
-      <value></value>
-    </param>
-    <param>
-      <key>notebook</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(593, 26)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -193,37 +138,6 @@
     </param>
   </block>
   <block>
-    <key>gr_multiply_const_vxx</key>
-    <param>
-      <key>id</key>
-      <value>gr_multiply_const_vxx_0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>const</key>
-      <value>signal</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(644, 224)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
     <key>variable_slider</key>
     <param>
       <key>id</key>
@@ -272,57 +186,6 @@
     <param>
       <key>_coordinate</key>
       <value>(842, 26)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>usrp_simple_sink_x</key>
-    <param>
-      <key>id</key>
-      <value>usrp_simple_sink_x_0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>which</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>interpolation</key>
-      <value>128</value>
-    </param>
-    <param>
-      <key>frequency</key>
-      <value>freq</value>
-    </param>
-    <param>
-      <key>lo_offset</key>
-      <value>float('inf')</value>
-    </param>
-    <param>
-      <key>gain</key>
-      <value>rfgain</value>
-    </param>
-    <param>
-      <key>side</key>
-      <value>B</value>
-    </param>
-    <param>
-      <key>transmit</key>
-      <value>auto_tr</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(846, 184)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -407,6 +270,199 @@
       <value>0</value>
     </param>
   </block>
+  <block>
+    <key>gr_multiply_const_vxx</key>
+    <param>
+      <key>id</key>
+      <value>gr_multiply_const_vxx_0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>complex</value>
+    </param>
+    <param>
+      <key>const</key>
+      <value>signal</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(644, 224)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>uhd_single_usrp_sink</key>
+    <param>
+      <key>id</key>
+      <value>uhd_single_usrp_sink</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>complex</value>
+    </param>
+    <param>
+      <key>nchan</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>dev_addr</key>
+      <value></value>
+    </param>
+    <param>
+      <key>ref_clk</key>
+      <value></value>
+    </param>
+    <param>
+      <key>sd_spec</key>
+      <value>B:</value>
+    </param>
+    <param>
+      <key>samp_rate</key>
+      <value>samp_rate</value>
+    </param>
+    <param>
+      <key>center_freq0</key>
+      <value>freq</value>
+    </param>
+    <param>
+      <key>gain0</key>
+      <value>rfgain</value>
+    </param>
+    <param>
+      <key>ant0</key>
+      <value></value>
+    </param>
+    <param>
+      <key>bw0</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>center_freq1</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>gain1</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>ant1</key>
+      <value></value>
+    </param>
+    <param>
+      <key>bw1</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>center_freq2</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>gain2</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>ant2</key>
+      <value></value>
+    </param>
+    <param>
+      <key>bw2</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>center_freq3</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>gain3</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>ant3</key>
+      <value></value>
+    </param>
+    <param>
+      <key>bw3</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(836, 200)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>variable_slider</key>
+    <param>
+      <key>id</key>
+      <value>signal</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value>Signal</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>0.5</value>
+    </param>
+    <param>
+      <key>min</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>max</key>
+      <value>1.0</value>
+    </param>
+    <param>
+      <key>num_steps</key>
+      <value>100</value>
+    </param>
+    <param>
+      <key>style</key>
+      <value>wx.SL_HORIZONTAL</value>
+    </param>
+    <param>
+      <key>converver</key>
+      <value>float_converter</value>
+    </param>
+    <param>
+      <key>grid_pos</key>
+      <value></value>
+    </param>
+    <param>
+      <key>notebook</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(593, 26)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
   <connection>
     <source_block_id>gr_file_source_0</source_block_id>
     <sink_block_id>blks2_packet_encoder_0</sink_block_id>
@@ -427,7 +483,7 @@
   </connection>
   <connection>
     <source_block_id>gr_multiply_const_vxx_0</source_block_id>
-    <sink_block_id>usrp_simple_sink_x_0</sink_block_id>
+    <sink_block_id>uhd_single_usrp_sink</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
